@@ -1,0 +1,18 @@
+name: Fresh-clone functional smoke
+on:
+  push:
+  pull_request:
+jobs:
+  synthetic-stage02:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install lightweight parser dependency
+        run: python -m pip install 'PyYAML>=6,<7'
+      - name: Run independent 1- and 3-sample synthetic cohorts
+        run: python -B scripts/validate_fresh_clone.py --mode smoke
+      - name: Execute smoke regression test
+        run: python -m unittest discover -s tests -p 'test_release_smoke.py' -v

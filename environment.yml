@@ -1,0 +1,15 @@
+name: metaviro-drank
+
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+
+dependencies:
+  - python=3.11
+  - pyyaml
+  - mmseqs2
+  - hmmer
+  - mafft
+  - foldseek
+  - biopython=1.88

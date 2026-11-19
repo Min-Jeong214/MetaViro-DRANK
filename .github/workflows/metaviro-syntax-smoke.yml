@@ -1,0 +1,28 @@
+name: MetaViro-DRANK syntax smoke
+on:
+  push:
+  pull_request:
+jobs:
+  python-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Syntax-parse Python sources without installing large databases
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          paths = sorted(Path('scripts').rglob('*.py')) if Path('scripts').exists() else []
+          paths += sorted(Path('tests').rglob('*.py')) if Path('tests').exists() else []
+          for name in ('run_pipeline.py', 'run_pipeline_full.py'):
+              if Path(name).exists():
+                  paths.append(Path(name))
+          if not paths:
+              raise SystemExit('NO_PYTHON_SOURCES')
+          for path in paths:
+              ast.parse(path.read_text(encoding='utf-8-sig'), filename=str(path))
+          print('SYNTAX_CHECK=PASS', 'FILES=', len(paths))
+          PY

@@ -1,0 +1,203 @@
+# Large datasets and databases
+/Analysis/
+/RefDB/
+/Result/
+/database/
+/databases/
+
+# Intermediate analysis outputs
+/validation/*/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Backup and temporary files
+*.before_*
+*.pre_exact_rebuild
+*.bak
+*.tmp
+*.log
+*~
+.DS_Store
+/input/*
+!/input/README.md
+/results/
+/logs/
+
+
+# MetaViro-DRANK research data protection
+
+# Raw biological datasets
+/Raw/
+/raw/
+/data/
+/Data/
+
+# Generated analyses and intermediate artifacts
+/output/
+/outputs/
+/Output/
+/Outputs/
+/figures/
+/Figures/
+/plots/
+/reports/
+
+# Structure prediction and model weights
+/models/
+/Models/
+/checkpoints/
+
+# Machine-specific settings
+/config.yaml
+/config.local.yaml
+/.env
+
+# Biological sequences and alignments
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.fasta
+*.faa
+*.fna
+*.fa
+*.gff
+*.gff3
+*.bam
+*.sam
+*.cram
+*.a3m
+*.aln
+
+# Predicted structures
+*.pdb
+*.cif
+*.mmcif
+
+# Large databases and trained models
+*.dmnd
+*.hmm
+*.h3f
+*.h3i
+*.h3m
+*.h3p
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+
+# Analysis tables: exclude unless explicitly approved
+*.tsv
+*.csv
+*.xlsx
+
+# Managed by MetaViro-DRANK GitHub setup
+# Local runs and research data
+/results/
+/data/
+/inputs/
+/work/
+/logs/
+/tmp/
+/temp/
+/cache/
+/db/
+/database/
+/databases/
+# Sequences, raw reads, structures and indexes
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.cram
+*.sra
+*.dmnd
+*.pdb
+*.a3m
+*.dbtype
+*:Zone.Identifier
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+.venv/
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+<!-- BEGIN MetaViro-DRANK 2026-10-27 VALIDATED STATUS -->
+# STEP171: avoid staging generated samples, structures, DBs and secrets
+/results/
+/runs/
+/work/
+/.env
+/.env.*
+!/.env.example
+*.dmnd
+*.dbtype
+*.m8
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+__pycache__/
+.pytest_cache/
+<!-- END MetaViro-DRANK 2026-10-27 VALIDATED STATUS -->
+
+# Stage186 GitHub private-release protection
+/results/
+/runs/
+/work/
+/Raw/
+/RefDB/
+/Result/
+/Analysis/
+/data/
+/databases/
+/db/
+/config.local.yaml
+/config.yaml
+/.env
+/.env.*
+*.fastq
+*.fq
+*.faa
+*.fna
+*.fasta
+*.fa
+*.gff
+*.gff3
+*.pdb
+*.cif
+*.mmcif
+*.a3m
+*.bam
+*.cram
+*.dmnd
+*.dbtype
+*.hmm
+*.h3f
+*.h3i
+*.h3m
+*.h3p
+*.parquet
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.pem
+*.key
+
+# Local R session history
+/.Rhistory

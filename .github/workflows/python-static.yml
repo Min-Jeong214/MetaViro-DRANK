@@ -1,0 +1,22 @@
+# Managed by MetaViro-DRANK GitHub setup
+name: Static Python checks
+on: [push, pull_request]
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Parse Python without installing research databases
+        run: |
+          python - <<'PYCI'
+          import ast
+          from pathlib import Path
+          paths = [Path('run_pipeline.py'), Path('run_pipeline_full.py')]
+          paths += sorted(Path('scripts').rglob('*.py'))
+          for path in paths:
+              ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
+          print(f'Parsed {len(paths)} Python files')
+          PYCI

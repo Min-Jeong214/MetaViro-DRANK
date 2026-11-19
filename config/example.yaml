@@ -1,0 +1,16 @@
+# Copy to config.local.yaml (ignored by .gitignore) and edit ALL paths.
+# Relative paths are resolved relative to the repository directory, NOT to the YAML file.
+input_dir: input/my_marine_viral_dataset
+output_dir: results/my_marine_viral_run_01
+min_aa: 150
+window: 5
+threads: 8
+
+databases:
+  swissprot: /absolute/path/to/swissprot_mmseqs_db_prefix
+  phrog: /absolute/path/to/phrogs_profile_mmseqs_db_prefix
+  pfam: /absolute/path/to/Pfam-A.hmm
+  phrog_annotations: /absolute/path/to/phrog_annotations.tsv
+
+# Stage09 Foldseek DBs are NOT read from this YAML. Supply --db-root
+# to run_pipeline_full.py, with DB names PDB, AF_SwissProt and BFVD.
