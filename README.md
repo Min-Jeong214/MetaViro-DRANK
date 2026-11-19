@@ -204,17 +204,13 @@ The manuscript has not yet been published. Bibliographic details and the article
 
 ### Scientific data availability
 
-Study-specific input data, validation evidence, and supporting results are maintained separately from the source-code repository.
-
-The associated study-specific sequence inputs and computational validation evidence are available in the [Zenodo dataset (DOI: 10.5281/zenodo.24184202)](https://doi.org/10.5281/zenodo.24184202).
+Study-specific sequence inputs and computational validation evidence are available in the [Zenodo dataset (DOI: 10.5281/zenodo.24184202)](https://doi.org/10.5281/zenodo.24184202), separately from the source-code repository.
 
 ### Software verification
 
-The repository includes synthetic fresh-clone execution tests, source-level regression tests, and GitHub checks. These are **software checks**, distinct from study-specific scientific validation. Database-backed verification procedures and unverified optional execution paths are documented in [Validation and tests](docs/VALIDATION_STATUS.md).
+Synthetic fresh-clone tests, regression tests, and GitHub Actions checks assess software behavior, **not experimentally validated biological functions**. Test coverage, database-dependent procedures, and pending evaluations are described in [Validation and tests](docs/VALIDATION_STATUS.md).
 
-Study-specific scientific evidence is documented in the associated manuscript and [Zenodo dataset](https://doi.org/10.5281/zenodo.24184202). These materials are distinct from software smoke-test results.
-
-For reproducible analyses, record the Git commit, software and database versions, configuration parameters, and input checksums.
+For reproducibility, record the Git commit, software and database versions, configuration parameters, and input checksums.
 
 ## 7. Documentation
 
